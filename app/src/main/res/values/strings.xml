@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AnnotationsSample</string>
+    <string name="text_weight">Enter your weight in kilograms</string>
+    <string name="text_height">Enter your height in meters</string>
+    <string name="button_calc">Calculate my BMI</string>
+    <string name="text_result">Your BMI is:</string>
+</resources>
