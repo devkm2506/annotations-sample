@@ -8,9 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import com.kmilo2506.annotationssample.R;
 
 /**
- * Created by kmilo2506 on 1/27/16.
+ * Created by Camilo Sepulveda on 1/27/16.
  */
 
+/* This is an abstract class that allows you to simplify the effort of
+ * creating activities that host a single fragment.
+ */
 public abstract class SingleFragmentActivity extends AppCompatActivity {
 
     protected abstract Fragment createFragment();
