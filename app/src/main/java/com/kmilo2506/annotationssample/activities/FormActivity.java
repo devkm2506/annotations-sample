@@ -12,6 +12,8 @@ import org.androidannotations.annotations.EActivity;
 
 /* @EActivity annotation is necessary so you can use the
  * other annotations in your activities, fragments etc.
+ * Also, you can only reference your annotated activities
+ * and fragments from another annotated classes.
  */
 @EActivity
 public class FormActivity extends SingleFragmentActivity {
