@@ -13,17 +13,23 @@ import org.androidannotations.annotations.ViewById;
 import java.util.Locale;
 
 /**
- * Created by kmilo2506 on 1/27/16.
+ * Created by Camilo Sepulveda on 1/27/16.
  */
 
+/**
+ * Use @EFragment and pass the fragment's layout as a parameter
+ * to avoid manually inflating it.
+ */
 @EFragment(R.layout.result_layout)
 public class ResultFragment extends Fragment{
 
     private static final String ARG_BMI="bmi";
-    private final String BMI_FORMAT = "%2.02f";
 
     private double mBmi;
 
+    /**
+     * Use @ViewById to avoid manually finding and casting your views.
+     */
     @ViewById(R.id.text_bmi)
     TextView mTextBmi;
 
@@ -40,12 +46,27 @@ public class ResultFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         mBmi = (double) getArguments().getSerializable(ARG_BMI);
+
+        /**
+         * IMPORTANT: You can't access your views from onCreate or onCreateView
+         * since at the point these methods are called your views HAVE NOT been
+         * instantiated yet. When you need to access your views you need to
+         * use the @AfterViews annotation or else you'll get a
+         * NullPointerException on each view you have declared.
+         */
     }
 
+    /**
+     * The @AfterViews annotation is used to specify which methods must be
+     * called AFTER all your views have been instantiated. You can safely
+     * use your views in methods with this annotation. In this case, we
+     * set the text for mTextBmi with the result we obtained from FormFragment here
+     * instead of doing it in onCreateView.
+     */
     @AfterViews
     void setBmiText(){
+        String BMI_FORMAT = "%2.02f";
         mTextBmi.setText(String.format(new Locale("EN", "en"), BMI_FORMAT, mBmi));
     }
 }

@@ -10,27 +10,28 @@ import org.androidannotations.annotations.EActivity;
  * Created by Camilo Sepulveda on 1/27/16.
  */
 
-/* @EActivity annotation is necessary so you can use the
- * other annotations in your activities, fragments etc.
- * Also, you can only reference your annotated activities
- * and fragments from another annotated classes.
+/** @EActivity annotation allows you to use the
+ *  other annotations in your activities among other
+ *  things. You can also pass the activities layout
+ *  as a parameter like this:
+ *      @EActivity(R.layout.some_activity_layout)
  */
 @EActivity
 public class FormActivity extends SingleFragmentActivity {
 
-    /* Here you return a new FormFragment so SingleFragmentActivity 
-     * can add it to the FragmentManager and present it when the
-     * activity is created.
+    /** Here you return a new FormFragment so SingleFragmentActivity
+     *  can add it to the FragmentManager and present it when the
+     *  activity is created.
      */
     @Override
     protected Fragment createFragment() {
-        /* Notice the underscore at the end of the fragment's name.
-         * When using the @EActivity or @EFragment annotations, 
-         * the framework creates new classes at compile time with 
-         * the same name as your fragments and activities but with
-         * an underscore at the end. This is why when you need to 
-         * reference this activities or fragments you must put an
-         * underscore at the end of their names.
+        /** Notice the underscore at the end of the fragment's name.
+         *  When using the @EActivity or @EFragment annotations,
+         *  the framework creates new classes at compile time using
+         *  the same name as your annotated fragments but adding
+         *  an underscore at the end of it. When you need to
+         *  reference your fragments, you MUST reference the
+         *  underscored ones.
          */
         return new FormFragment_();
     }
