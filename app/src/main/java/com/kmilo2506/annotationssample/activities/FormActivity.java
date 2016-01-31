@@ -15,7 +15,8 @@ import org.androidannotations.annotations.EActivity;
  * other annotations in your activities among other
  * things. You can also pass the activities layout
  * as a parameter like this:
- *      @EActivity(R.layout.some_activity_layout)
+ *
+ *      "@EActivity(R.layout.some_activity_layout)"
  */
 @EActivity
 public class FormActivity extends SingleFragmentActivity {
