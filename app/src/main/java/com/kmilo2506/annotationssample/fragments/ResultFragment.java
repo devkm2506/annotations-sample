@@ -33,6 +33,11 @@ public class ResultFragment extends Fragment{
     @ViewById(R.id.text_bmi)
     TextView mTextBmi;
 
+    /**
+     * Creates a ResultFragment with the BMI value as a fragment argument.
+     * @param bmi The BMI value
+     * @return A ResultFragment
+     */
     public static ResultFragment newInstance(double bmi) {
         Bundle args = new Bundle();
         args.putSerializable(ARG_BMI, bmi);

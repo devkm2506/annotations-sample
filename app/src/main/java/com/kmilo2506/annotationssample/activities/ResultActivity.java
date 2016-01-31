@@ -12,7 +12,8 @@ import org.androidannotations.annotations.EActivity;
  * Created by Camilo Sepulveda on 1/27/16.
  */
 
-/** Here, @EActivity annotation seems pointless since there are
+/**
+ * Here, @EActivity annotation seems pointless since there are
  * no other annotations specified in this activity. However,
  * take a look at the first line in newIntent(Context context, double bmi)
  */
@@ -21,6 +22,12 @@ public class ResultActivity extends SingleFragmentActivity {
 
     private static final String EXTRA_BMI = "com.kmilo2506.annotationssample.bmi";
 
+    /**
+     * Creates a new Intent with the BMI as an extra.
+     * @param context The calling activity's context
+     * @param bmi The BMI value
+     * @return An intent
+     */
     public static Intent newIntent(Context context, double bmi) {
         /**
          * Here, instead of manually creating an Intent, we use
