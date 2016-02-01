@@ -21,9 +21,9 @@ import java.util.Locale;
  * to avoid manually inflating it.
  */
 @EFragment(R.layout.result_layout)
-public class ResultFragment extends Fragment{
+public class ResultFragment extends Fragment {
 
-    private static final String ARG_BMI="bmi";
+    private static final String ARG_BMI = "bmi";
 
     private double mBmi;
 
@@ -36,7 +36,7 @@ public class ResultFragment extends Fragment{
     /**
      * Creates a ResultFragment with the BMI value as a fragment argument.
      * @param bmi The BMI value
-     * @return A ResultFragment$$$$
+     * @return A ResultFragment
      */
     public static ResultFragment newInstance(double bmi) {
         Bundle args = new Bundle();
